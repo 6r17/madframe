@@ -19,7 +19,7 @@ await autofill(some_function, args=[], context=context) # notice that we don't p
 > "foo"
 # autofill undertand it has to retrieve the value from context if you don't specify it
 
-await autofill(some_function, args["bar", context=context) # we pass an argument
+await autofill(some_function, args["bar"], context=context) # we pass an argument
 > "bar"
 
 ```
