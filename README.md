@@ -3,15 +3,8 @@
 - ☮️ Non intruisive
 - 💪 Modular
 
-### Over 10 different [bindings](./madframe/bindings.py')
+## Includes
 
-```python
-from madframe import routine
-
-@routine(1)
-def print_hello():
-    print('hello world')
-```
 ### Autofill
 
 Autofill is the process of automaticly composing a function usage deduced from the prototype naming and a given context.
