@@ -16,16 +16,16 @@ activate:
 	@echo '. env/bin/activate'
 
 test:
-	env/bin/pytest -s --cov=aiosow --cov-report=term-missing --cov-fail-under=100
+	env/bin/pytest -s --cov=madframe --cov-report=term-missing --cov-fail-under=100
 
 report:
 	env/bin/coverage report
 
 pydoc:
-	cd aiosow ; ../env/bin/python3.10 -m pydoc -b -p 9000 aiosow
+	cd madframe ; ../env/bin/python3.10 -m pydoc -b -p 9000 madframe
 
 pdoc:
-	env/bin/pdoc aiosow !aiosow.command !aiosow.utils !aiosow.options !aiosow.setup !aiosow.perpetuate !aiosow.autofill -o docs/ --logo 'logo.png' -t './doc-template' --no-show-source
+	env/bin/pdoc madframe !madframe.command !madframe.utils !madframe.options !madframe.setup !madframe.perpetuate !madframe.autofill -o docs/ --logo 'logo.png' -t './doc-template' --no-show-source
 
 upload:
 	env/bin/pip3 install twine

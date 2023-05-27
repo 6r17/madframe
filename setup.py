@@ -5,16 +5,16 @@ with open("README.md", "r") as f:
     long_description = f.read()
 
 setup(
-    name="aiosow",
+    name="madframe",
     version="0.1.8",
-    packages=find_packages(include=["aiosow"]),
+    packages=find_packages(include=["madframe"]),
     description="An event-based framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
     license="MIT",
     entry_points={
         "console_scripts": [
-            "aiosow = aiosow.command:run",
+            "madframe = madframe.command:run",
         ],
     },
     install_requires=[],

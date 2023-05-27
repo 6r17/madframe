@@ -1,9 +1,9 @@
 #! env python3.11
 
 import logging, asyncio, importlib, argparse, sys
-from aiosow.setup import initialize, should_trigger_routines
-from aiosow.options import options, commands
-from aiosow.routines import spawn_routine_consumer
+from madframe.setup import initialize, should_trigger_routines
+from madframe.options import options, commands
+from madframe.routines import spawn_routine_consumer
 
 
 def load_composition(composition=None, **kwargs):
@@ -60,7 +60,7 @@ def load_composition(composition=None, **kwargs):
         logging.error("An error occured opening the composition")
         raise (e)
     for module_name in sys.modules.keys():
-        if "bindings" in module_name and "aiosow" not in module_name:
+        if "bindings" in module_name and "madframe" not in module_name:
             logging.info("+ composition %s", module_name)
     for args, kwargs in options():
         parser.add_argument(*args, **kwargs)

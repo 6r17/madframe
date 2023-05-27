@@ -3,9 +3,9 @@ from functools import wraps
 
 import asyncio, logging
 
-from aiosow.perpetuate import perpetuate, autofill
-from aiosow.bindings import return_true
-from aiosow.setup import trigger_routines
+from madframe.perpetuate import perpetuate, autofill
+from madframe.bindings import return_true
+from madframe.setup import trigger_routines
 
 trigger_routines()
 

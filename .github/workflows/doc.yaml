@@ -28,7 +28,7 @@ jobs:
       - run: pip install -e ".[aiohttp]"
       - run: pip install -e ".[doc]"
 
-      - run: pdoc aiosow !aiosow.command !aiosow.utils !aiosow.options !aiosow.setup !aiosow.perpetuate !aiosow.autofill -o docs/ --logo 'https://exorde-labs.github.io/aiosow/logo.png' -t './doc-template' --no-show-source
+      - run: pdoc madframe !madframe.command !madframe.utils !madframe.options !madframe.setup !madframe.perpetuate !madframe.autofill -o docs/ --logo 'https://exorde-labs.github.io/madframe/logo.png' -t './doc-template' --no-show-source
       - run: cp logo.png docs/logo.png
 
       - uses: actions/upload-pages-artifact@v1

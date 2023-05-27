@@ -1,5 +1,5 @@
 import pytest
-from aiosow.routines import (
+from madframe.routines import (
     routine,
     clear_routines,
     get_routines,

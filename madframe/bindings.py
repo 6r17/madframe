@@ -6,10 +6,10 @@ import time
 import inspect
 from functools import wraps
 
-from aiosow.autofill import autofill, alias, make_async
-from aiosow.options import option
-from aiosow.perpetuate import on, perpetuate
-from aiosow.setup import setup
+from madframe.autofill import autofill, alias, make_async
+from madframe.options import option
+from madframe.perpetuate import on, perpetuate
+from madframe.setup import setup
 
 
 def adapter(resolve: Callable) -> Callable:
@@ -68,7 +68,9 @@ def until_success():
     return retry_until_success
 
 
-def wire(condition=None, perpetual=False, pass_args=True) -> Tuple[Callable, Callable]:
+def wire(
+    condition=None, perpetual=False, pass_args=True
+) -> Tuple[Callable, Callable]:
     """
     Returns a tuple of two decorators: `trigger_decorator` and `listen_decorator`.
 
@@ -135,14 +137,20 @@ def wire(condition=None, perpetual=False, pass_args=True) -> Tuple[Callable, Cal
             result = await autofill(triggerer, args=args, **kwargs)
             # if triggerer is a generator we need to iterate over it
             if result and (
-                await autofill(condition, args=[], **kwargs) if condition else True
+                await autofill(condition, args=[], **kwargs)
+                if condition
+                else True
             ):
                 if inspect.isgenerator(result):
                     tasks = []
                     for val in result:
                         tasks += [
                             asyncio.create_task(
-                                caster(func, args=[val] if pass_args else [], **kwargs)
+                                caster(
+                                    func,
+                                    args=[val] if pass_args else [],
+                                    **kwargs
+                                )
                             )
                             for func in listeners
                             if func
@@ -150,7 +158,11 @@ def wire(condition=None, perpetual=False, pass_args=True) -> Tuple[Callable, Cal
                 else:
                     tasks = [
                         asyncio.create_task(
-                            caster(func, args=[result] if pass_args else [], **kwargs)
+                            caster(
+                                func,
+                                args=[result] if pass_args else [],
+                                **kwargs
+                            )
                         )
                         for func in listeners
                         if func
@@ -322,7 +334,9 @@ def each(iter: Union[Callable, None] = None):
                 args = list(args)
                 iterated = args.pop()
                 for value in iterated:
-                    tasks.append(autofill(function, args=(value, args), **kwargs))
+                    tasks.append(
+                        autofill(function, args=(value, args), **kwargs)
+                    )
             return await asyncio.gather(*tasks)
 
         return execute
@@ -465,7 +479,7 @@ def expect(
 
 def pdb(*__args__, **__kwargs__):  # pragma: no cover
     """
-    Launches pdb.set_trace(), utility function for `aiosow.bindings.debug`
+    Launches pdb.set_trace(), utility function for `madframe.bindings.debug`
 
     **Example**:
     ```

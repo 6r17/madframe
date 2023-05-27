@@ -1,6 +1,6 @@
 import pytest
 
-from aiosow.perpetuate import perpetuate, on
+from madframe.perpetuate import perpetuate, on
 
 
 @pytest.mark.asyncio

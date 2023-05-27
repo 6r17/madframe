@@ -1,7 +1,7 @@
 import pytest
 
-from aiosow.bindings import delay
-from aiosow.autofill import (
+from madframe.bindings import delay
+from madframe.autofill import (
     get_aliases,
     reset_aliases,
     autofill,
@@ -122,7 +122,9 @@ async def test_autofill_decorated():
     memory = {"a": 3, "b": 4}
     # Test 7: On a decorated function
     decorated_function = delay(0.05)(my_function6)
-    assert await autofill(decorated_function, memory=memory) == ({"a": 3, "b": 4})
+    assert await autofill(decorated_function, memory=memory) == (
+        {"a": 3, "b": 4}
+    )
 
 
 @pytest.mark.asyncio

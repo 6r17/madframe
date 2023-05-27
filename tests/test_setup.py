@@ -1,5 +1,5 @@
 import pytest
-from aiosow.setup import initialize, setup, clear_setups, get_setups
+from madframe.setup import initialize, setup, clear_setups, get_setups
 
 
 async def my_init_function_1(foo: dict):

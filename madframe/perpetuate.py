@@ -3,12 +3,16 @@ import asyncio
 from typing import Callable, Any, Union
 from collections.abc import Iterable
 
-from aiosow.autofill import autofill
+from madframe.autofill import autofill
 
 ONS = {}
 
 
-def on(variable_name: str, condition: Union[Callable, None] = None, singularize=False):
+def on(
+    variable_name: str,
+    condition: Union[Callable, None] = None,
+    singularize=False,
+):
     """
     Decorator function that registers a function to be executed when a variable
     of specified name is perpetuated in memory.
@@ -46,7 +50,9 @@ def on(variable_name: str, condition: Union[Callable, None] = None, singularize=
     return decorator
 
 
-async def perpetuate(function: Callable, args: Any = [], memory: Any = {}) -> Any:
+async def perpetuate(
+    function: Callable, args: Any = [], memory: Any = {}
+) -> Any:
     """
     Asynchronously executes a function and perpetuates its effects in memory.
 
@@ -76,7 +82,8 @@ async def perpetuate(function: Callable, args: Any = [], memory: Any = {}) -> An
     if isinstance(update, dict):
         memory.update(update)
         logging.debug(
-            "Mutation = %s", json.dumps(update, indent=4, default=lambda a: str(a))
+            "Mutation = %s",
+            json.dumps(update, indent=4, default=lambda a: str(a)),
         )
         # logging.debug('Memory = %s', json.dumps(memory, indent=4, default=lambda a: str(a)))
         for key, value in update.items():
@@ -101,7 +108,9 @@ async def perpetuate(function: Callable, args: Any = [], memory: Any = {}) -> An
                     else:
                         if (
                             condition
-                            and await autofill(condition, args=[value], memory=memory)
+                            and await autofill(
+                                condition, args=[value], memory=memory
+                            )
                         ) or not condition:
                             await perpetuate(func, args=[value], memory=memory)
     return update

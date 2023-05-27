@@ -1,6 +1,6 @@
 import time, asyncio
 import pytest
-from aiosow.bindings import (
+from madframe.bindings import (
     adapter,
     expect,
     do_raise,
@@ -117,7 +117,9 @@ async def test_delay_decorator(synchronous_function, asynchronous_function):
     result = await delayed_synchronous()
     end_time = time.monotonic()
     assert result is True
-    assert end_time - start_time >= 0.005  # Ensure delay of at least 0.005 seconds
+    assert (
+        end_time - start_time >= 0.005
+    )  # Ensure delay of at least 0.005 seconds
 
     delayed_asynchronous = delay(seconds=0.005)(asynchronous_function)
     start_time = time.monotonic()

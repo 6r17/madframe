@@ -1,6 +1,6 @@
 import logging, asyncio
 from typing import Dict, List, Callable
-from aiosow.perpetuate import perpetuate
+from madframe.perpetuate import perpetuate
 
 SETUP_FUNCTIONS: List = []
 TRIGGER_ROUTINES = False
