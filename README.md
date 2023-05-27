@@ -12,9 +12,26 @@ from madframe import routine
 def print_hello():
     print('hello world')
 ```
-
-  
 ### Autofill
+
+Autofill is the process of automaticly composing a function usage deduced from the prototype naming and a given context.
+
+```python
+
+context = {"value": "foo"}
+def some_function(value):
+    print(value)
+
+await autofill(some_function, args=[], context=context) # notice that we don't pass any argument
+> "foo"
+# this is because autofill automaticly undertand it has to retrieve the value from context if you don't specify the value
+
+await autofill(some_function, args["bar", context=context) # we pass an argument
+> "bar"
+
+```
+  
+### Routine
   
 ```python
 from madframe import setup
@@ -25,7 +42,7 @@ def initialize():
 
 @routine(1)
 def print_foo(some_key):
-    print(some_key) # -> will print foo 
+    print(some_key)
 ```
 
 ### Wire
