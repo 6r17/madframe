@@ -1,7 +1,8 @@
-**madframe** - Functional Event Framework for Python
+**madframe** - Functional State-Machine Framework for Python
 - ~💢 TypeCheck at runtime~ (coming soon !)
 - ☮️ Non intruisive
-- 💪 Modular
+- 🧰 Functionnal
+- 🕐 Event-Based
 
 ## Includes
 
