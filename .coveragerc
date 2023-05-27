@@ -1,5 +1,5 @@
 [run]
 omit = 
-    aiosow/command.py
-    aiosow/shell.py
-    aiosow/http.py
+    madframe/command.py
+    madframe/shell.py
+    madframe/http.py
