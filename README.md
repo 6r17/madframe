@@ -21,8 +21,8 @@ await autofill(some_function, args=[], context=context) # notice that we don't p
 
 await autofill(some_function, args["bar"], context=context) # we pass an argument
 > "bar"
-
 ```
+⚠️ **With madframe, every binding use `autofill`.**
   
 ### Routine
   
@@ -37,6 +37,14 @@ def initialize():
 def print_foo(some_key):
     print(some_key)
 ```
+
+### Setup
+
+Setup is used to define function to be ran at start-up. Those executions block the start-up and will abort the lauch if they fail.
+
+### Perpetuate
+
+`perpetuate` is `autofill` but the result of the function will be perpetuated in the given context. 
 
 ### Wire
 
