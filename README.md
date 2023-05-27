@@ -5,7 +5,7 @@
 
 ## Includes
 
-### Autofill
+### 🤖 Autofill
 
 Autofill is the process of automaticaly composing a function usage deduced from the prototype naming and a given context.
 
@@ -22,9 +22,9 @@ await autofill(some_function, args=[], context=context) # notice that we don't p
 await autofill(some_function, args["bar"], context=context) # we pass an argument
 > "bar"
 ```
-⚠️ **With madframe, every binding use `autofill`.**
+💁 **every madframe decorator uses `autofill`**
   
-### Routine
+### 🕙 Routine
   
 ```python
 from madframe import setup
@@ -38,15 +38,15 @@ def print_foo(some_key):
     print(some_key) # -> prints "foo"
 ```
 
-### Setup
+### 🏗️ Setup
 
 Setup is used to define function to be ran at start-up. Those executions block the start-up and will abort the lauch if they fail.
 
-### Perpetuate
+### 📝 Perpetuate
 
 `perpetuate` is `autofill` but the context is also updated with the result of the function (given it's a `dict`)
 
-### Wire
+### 🚩 Wire
 
 ```python
 from madframe import wire
