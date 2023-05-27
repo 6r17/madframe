@@ -1,4 +1,4 @@
-madframe - Functional Event Framework for Python
+**madframe** - Functional Event Framework for Python
 - ~💢 TypeCheck at runtime~ (coming soon !)
 - ☮️ Non intruisive
 - 💪 Modular
@@ -19,7 +19,7 @@ def print_hello():
 
 ```
 
-[![Test](https://github.com/6r17/madframe/actions/workflows/test.yaml/badge.svg)](./tests/test_schema.py)
+[![Package test](https://github.com/6r17/madframe/actions/workflows/test.yml/badge.svg)](https://github.com/6r17/madframe/actions/workflows/test.yml)
 [![pypi](https://img.shields.io/pypi/v/madframe)](https://pypi.org/project/madframe/)
 ![python: >3.9](https://img.shields.io/badge/python-%3E3.9-informational)
 ### Installation
