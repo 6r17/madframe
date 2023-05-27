@@ -17,7 +17,7 @@ def some_function(value):
 
 await autofill(some_function, args=[], context=context) # notice that we don't pass any argument
 > "foo"
-# autofill undertand it has to retrieve the value from context if you don't specify the value
+# autofill undertand it has to retrieve the value from context if you don't specify it
 
 await autofill(some_function, args["bar", context=context) # we pass an argument
 > "bar"
