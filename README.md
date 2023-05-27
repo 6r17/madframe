@@ -44,7 +44,7 @@ Setup is used to define function to be ran at start-up. Those executions block t
 
 ### Perpetuate
 
-`perpetuate` is `autofill` but the result of the function will be perpetuated in the given context. 
+`perpetuate` is `autofill` but the context is also updated with the result of the function (given it's a `dict`)
 
 ### Wire
 
