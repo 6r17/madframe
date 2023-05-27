@@ -16,7 +16,15 @@ def print_hello():
 ### Autofill
   
 ```python
+from madframe import setup
 
+@setup
+def initialize():
+    return {"some_key": "foo"}
+
+@routine(1)
+def print_foo(some_key):
+    print(some_key) # -> will print foo 
 ```
 
 [![Package test](https://github.com/6r17/madframe/actions/workflows/test.yml/badge.svg)](https://github.com/6r17/madframe/actions/workflows/test.yml)
