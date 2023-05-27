@@ -11,6 +11,7 @@
 Autofill is the process of automaticaly composing a function usage deduced from the prototype naming and a given context.
 
 ```python
+from madframe.autofill import autofill
 
 context = {"value": "foo"}
 def some_function(value):
@@ -28,7 +29,7 @@ await autofill(some_function, args["bar"], context=context) # we pass an argumen
 ### 🕙 Routine
   
 ```python
-from madframe import setup
+from madframe.bindings import setup
 
 @setup
 def initialize():
@@ -50,7 +51,7 @@ Setup is used to define function to be ran at start-up. Those executions block t
 ### 🚩 Wire
 
 ```python
-from madframe import wire
+from madframe.bindings import wire
 
 something_is_done_when, do_something_when = wire()
 
