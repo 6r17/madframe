@@ -6,7 +6,7 @@ with open("README.md", "r") as f:
 
 setup(
     name="madframe",
-    version="0.1.8",
+    version="0.0.1",
     packages=find_packages(include=["madframe"]),
     description="An event-based framework",
     long_description=long_description,
