@@ -4,6 +4,8 @@
 - 🧰 Functionnal
 - 🕐 Event-Based
 
+:warning: This project is in Alpha state.
+
 ## Includes
 
 ### 🤖 Autofill
