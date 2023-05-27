@@ -3,7 +3,7 @@
 - ☮️ Non intruisive
 - 💪 Modular
 
-### Bindings
+### Over 10 different [bindings](./madframe/bindings.py')
 
 ```python
 from madframe import routine
@@ -12,6 +12,7 @@ from madframe import routine
 def print_hello():
     print('hello world')
 ```
+
   
 ### Autofill
   
@@ -25,6 +26,19 @@ def initialize():
 @routine(1)
 def print_foo(some_key):
     print(some_key) # -> will print foo 
+```
+
+### Wire
+
+```python
+from madframe import wire
+
+something_is_done_when, do_something_when = wire()
+
+fetch = do_something_when(fetch_data)
+something_is_done_when(analyze_data)
+
+fetch # is equivalent of `analyze_data(fetch_data)`
 ```
 
 [![Package test](https://github.com/6r17/madframe/actions/workflows/test.yml/badge.svg)](https://github.com/6r17/madframe/actions/workflows/test.yml)
